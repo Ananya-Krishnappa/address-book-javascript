@@ -44,3 +44,4 @@ console.log(addContactToAddressBook(contact2));
 console.log(findContactByName("Ananya"));
 deleteContactByName("Aksha");
 console.log("Array after delete", addressBookArr);
+console.log("Number of contacts in address book",addressBookArr.length);
