@@ -55,9 +55,29 @@ const deleteContactByName = (firstName) => {
  * Function to sort an array alphabetical order
  */
 const sortByName = () => {
-    addressBookArr.sort(function(a, b){
-        if(a.firstname < b.firstname) { return -1; }
-        if(a.firstname > b.firstname) { return 1; }
+    addressBookArr.sort(function (a, b) {
+        if (a.firstname < b.firstname) {
+            return -1;
+        }
+        if (a.firstname > b.firstname) {
+            return 1;
+        }
+        return 0;
+    })
+    return addressBookArr;
+}
+
+/**
+ * Function to sort city in alphabetical order
+ */
+const sortByCity = () => {
+    addressBookArr.sort(function (a, b) {
+        if (a.city < b.city) {
+            return -1;
+        }
+        if (a.city > b.city) {
+            return 1;
+        }
         return 0;
     })
     return addressBookArr;
@@ -68,7 +88,8 @@ let contact2 = new Contact("3", "Veena", "Prabath", "simse", "goolu", "moolu", "
 addContactToAddressBook(contact);
 addContactToAddressBook(contact1);
 addContactToAddressBook(contact2);
-console.log("Sort array in alphabetical order",sortByName());
+console.log("Sort array in alphabetical order", sortByName());
+console.log("Sort city in alphabetical order", sortByCity());
 console.log(findContactByName("Ananya"));
 deleteContactByName("Aksha");
 console.log("Contact in city is", findContactByCity("goolu"));
