@@ -50,12 +50,25 @@ const deleteContactByName = (firstName) => {
     addressBookArr = addressBookArr.filter(contact => contact.firstName != firstName);
     return addressBookArr;
 }
+
+/**
+ * Function to sort an array alphabetical order
+ */
+const sortByName = () => {
+    addressBookArr.sort(function(a, b){
+        if(a.firstname < b.firstname) { return -1; }
+        if(a.firstname > b.firstname) { return 1; }
+        return 0;
+    })
+    return addressBookArr;
+}
 let contact = new Contact("1", "Ananya", "Gowda", "agrahara", "nrpura", "chikmagalur", "9876547643", "122343", "something@something.com");
 let contact1 = new Contact("2", "Aksha", "Nishanth", "shettykoppa", "koppa", "shimoga", "9976547643", "198343", "aksha@something.com");
 let contact2 = new Contact("3", "Veena", "Prabath", "simse", "goolu", "moolu", "9906547643", "199343", "anik@something.com");
 addContactToAddressBook(contact);
 addContactToAddressBook(contact1);
 addContactToAddressBook(contact2);
+console.log("Sort array in alphabetical order",sortByName());
 console.log(findContactByName("Ananya"));
 deleteContactByName("Aksha");
 console.log("Contact in city is", findContactByCity("goolu"));
