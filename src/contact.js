@@ -1,7 +1,7 @@
 /**
  * Validate the inputs that are added to the contact in address book
  */
-class Contact {
+export class Contact {
 
     constructor(...params) {
         this.id = params[0];
@@ -112,5 +112,3 @@ class Contact {
         return "id=" + this.id + ",firstName=" + this.firstName + ",lastName=" + this.lastName + ",address=" + this.address + ",city=" + this.city + ",state=" + this.state + ",phoneNumber=" + this.phoneNumber + ",zip=" + this.zip + ",email=" + this.email;
     }
 }
-let contact = new Contact("1", "Ananya", "Gowda", "agrahara", "nrpura", "chikmagalur", "9876547643", "122343", "something@something.com");
-console.log(contact.toString());
